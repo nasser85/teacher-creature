@@ -1,0 +1,95 @@
+* {
+  box-sizing: flex-box;
+}
+body {
+  background-color: #2e7d32 !important;
+  background: no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+@font-face {
+    font-family: titleFont;
+    src: url(BLACKBOYSONMOPEDS.ttf);
+}
+
+@font-face {
+    font-family: generalFont;
+    src: url(Hyperness.ttf);
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+nav {
+	.brand-logo {
+		font-family: titleFont;
+	}
+	
+}
+.general {
+	font-family: generalFont;
+}
+#main {
+  padding-top: 60px;
+  margin: 0 auto;
+}
+
+#greeting {
+	margin-top: 10px;
+	z-index: 99;
+	position: absolute;
+	font-family: generalFont;
+	h1 {
+		text-shadow:
+	    -1px -1px 0 #000,
+	    1px -1px 0 #000,
+	    -1px 1px 0 #000,
+	    1px 1px 0 #000; 
+	}
+}
+video {
+	margin-top: -220px;
+	z-index: 1;
+	min-height: 800px !important;
+}
+.main-button {
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 10px;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #2e7d32;
+	height: 60px;
+	width: 60% !important;
+	background-color: white;
+	p {
+		color: #2e7d32;
+		font-size: 30px;
+		margin-top: 5px;
+	    
+	}
+}
+.main-button:hover {
+	background-color: black;
+}
+video::-webkit-media-controls {
+  display: none !important;
+}
+video:hover::-webkit-media-controls {
+  display: none !important;
+}
+
+@import 'directives/main';
+@import 'home/main';
+@import 'about/main';
+@import 'tutorial/main';
+@import 'login/main';
