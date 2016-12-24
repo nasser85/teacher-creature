@@ -7,6 +7,7 @@ app.config(function ($stateProvider) {
 });
 
 app.controller('HomeCtrl', function($scope) {
+	window.scroll(0,0);
 	document.body.style.backgroundImage = ""
 })
 

@@ -1,13 +1,14 @@
 'use strict';
-var crypto = require('crypto');
-var _ = require('lodash');
-var Sequelize = require('sequelize');
+const crypto = require('crypto');
+const _ = require('lodash');
+const Sequelize = require('sequelize');
 
-var db = require('../_db');
+const db = require('../_db');
 
 module.exports = db.define('user', {
     email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
     },
     password: {
         type: Sequelize.STRING
@@ -15,14 +16,20 @@ module.exports = db.define('user', {
     salt: {
         type: Sequelize.STRING
     },
-    twitter_id: {
+    firstName: {
         type: Sequelize.STRING
     },
-    facebook_id: {
+    lastName: {
         type: Sequelize.STRING
     },
-    google_id: {
+    school: {
         type: Sequelize.STRING
+    },
+    pictureUrl: {
+        type: Sequelize.STRING
+    },
+    bio: {
+        type: Sequelize.TEXT
     }
 }, {
     instanceMethods: {
