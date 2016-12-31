@@ -3,7 +3,10 @@ var router = require('express').Router();
 module.exports = router;
 
 router.use('/members', require('./members'));
-router.use('/api', require('./api'));
+router.use('/users', require('./users'));
+//router.use('/classrooms', require('./classrooms'));
+//router.use('/tests', require('./tests'));
+//router.use('/questions', require('./questions'));
 
 // Make sure this is after all of
 // the registered routes!
