@@ -8,7 +8,7 @@ app.config(function ($stateProvider) {
 
 });
 
-app.controller('LoginCtrl', function ($scope, AuthService, $state, $stateParams) {
+app.controller('LoginCtrl', function ($scope, AuthService, $state, $stateParams, UserFactory) {
     $(document).ready(function() {
         
         $('.message a').click(function(){
@@ -24,6 +24,19 @@ app.controller('LoginCtrl', function ($scope, AuthService, $state, $stateParams)
     $scope.error = null;
     $scope.userName = $stateParams.user;
 
+    $scope.createUser = function(user) {
+        UserFactory.create(user)
+        .then(function(newUser) {
+            return AuthService.login({email: newUser.email, password: user.password})
+                .then(function () {
+                    console.log("and here");
+                    $state.go('home');
+                })
+                .catch(function () {
+                    $scope.error = 'Invalid login credentials.';
+                });
+        })
+    }
     $scope.sendLogin = function (loginInfo) {
 
         $scope.error = null;

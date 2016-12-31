@@ -1,8 +1,8 @@
 app.config(function ($stateProvider) {
-    $stateProvider.state('home', {
-        url: '/',
-        templateUrl: 'js/home/home.html',
-        controller: 'HomeCtrl',
+    $stateProvider.state('createClass', {
+        url: '/create-class',
+        templateUrl: 'js/class/create-class.html',
+        controller: 'CreateClassCtrl',
         resolve: {
         	user: function(AuthService) {
         		return AuthService.getLoggedInUser();
@@ -11,7 +11,7 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('HomeCtrl', function($scope, user, AuthService, $state) {
+app.controller('CreateClassCtrl', function($scope, user, AuthService, $state) {
 	window.scroll(0,0);
 	document.body.style.backgroundImage = ""
 
@@ -28,4 +28,3 @@ app.controller('HomeCtrl', function($scope, user, AuthService, $state) {
             });
 	}
 })
-

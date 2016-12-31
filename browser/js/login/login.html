@@ -2,19 +2,19 @@
     <div class="login-page">
       <div class="form">
         <h4 class="general"><i class="material-icons green-text">android</i> Welcome, {{userName}}!</h4>
-        <form class="register-form">
-            <input type="text" placeholder="first name"/>
-            <input type="text" placeholder="last name"/>
-            <input type="text" placeholder="email address"/>
-            <input type="password" placeholder="password"/>
-            <button>create</button>
+        <form class="register-form" ng-submit="loginForm.$valid && sendLogin(login)">
+            <input ng-model="login.firstName" type="text" placeholder="first name"/>
+            <input ng-model="login.lastName" type="text" placeholder="last name"/>
+            <input ng-model="login.email" type="text" placeholder="email address"/>
+            <input ng-model="login.password" type="password" placeholder="password"/>
+            <button ng-click="createUser(login)">create</button>
             <p class="message">Already registered? <a href="#">Sign In</a></p>
         </form>
         <form class="login-form">
-            <input ng-if="userName=='Student'" type="text" placeholder="username"/>
-            <input ng-if="userName=='Teacher'" type="text" placeholder="email address"/>
-            <input type="password" placeholder="password"/>
-            <button>login</button>
+            <input ng-model="login.firstName" ng-if="userName=='Student'" type="text" placeholder="username"/>
+            <input ng-model="login.email" ng-if="userName=='Teacher'" type="text" placeholder="email address"/>
+            <input ng-model="login.password" type="password" placeholder="password"/>
+            <button ng-click="sendLogin(login)">login</button>
             <p ng-show="userName=='Teacher'" class="message">Not registered? <a href="#">Create an account</a></p>
         </form>
       </div>
