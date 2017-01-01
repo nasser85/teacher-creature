@@ -5,84 +5,106 @@
 	  </video>
 	  <ul ng-if="user" class="collection with-header">
 	  	<li class="collection-header">
-	  		<h4 class="center">Dashboard</h4>
+
+	  		<h4 class="center"><a class="dashboard-title"><i ui-sref="home" class="medium material-icons" >android</i></a>Dashboard</h4>
 	  	</li>
 	    <li class="collection-item avatar">
 	      <img src="http://a5.files.biography.com/image/upload/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTE4MDAzNDEwNzg5ODI4MTEw.jpg" alt="" class="circle">
 	      <span class="title">{{user.firstName}} {{user.lastName}}</span>
 	      <p>Awesome Teacher</p>
-	      <a href="#" ng-click="logout()" class="secondary-content">Logout</a>
+	      <a href="#" ng-click="logout()" class="secondary-content"><span class="green-text">Logout</span></a>
 	    </li>
 	    <li class="collection-header">
 	  		<h5>Classes</h5>
 	  	</li>
-	  	<li class="collection-item avatar">
-	      <i ui-sref="createClass" class="material-icons circle">folder</i>
-	      <span class="center title">Create Class</span>
-	      <p>First Line <br>
-	         Second Line
+	  	<li ui-sref="createClass" class="option collection-item avatar">
+	      <i class="purple material-icons circle">assignment_ind</i>
+	      <span class="purple-text center title">Create Class</span>
+	      <p>Manage Content <br>
+	         and Create Student Roster
 	      </p>
 	      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
 	    </li>
-	    <li class="collection-item avatar">
-	      <i class="material-icons circle">folder</i>
-	      <span class="center title">View Classes</span>
-	      <p>First Line <br>
-	         Second Line
+	    <li ui-sref="viewClasses" class="option collection-item avatar">
+	      <i class="orange material-icons circle">supervisor_account</i>
+	      <span class="orange-text center title">View Classes</span>
+	      <p>View or Update <br>
+	         Current Classes
 	      </p>
 	      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
 	    </li>
 	    <li class="collection-header">
 	  		<h5>Lessons</h5>
 	  	</li>
-	  	<li class="collection-item avatar">
-	      <i class="material-icons circle">folder</i>
+	  	<li class="option collection-item avatar">
+	      <i class="cyan material-icons circle">assignment</i>
 	      <span class="title cyan-text">Create Lesson</span>
-	      <p>Add to a course<br>
-	         or share
+	      <p>Add to a Course<br>
+	         or Simply Share
+	      </p>
+	      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+	    </li>
+	    <li class="option collection-item avatar">
+	      <i class="pink material-icons circle">class</i>
+	      <span class="title pink-text">View Lessons</span>
+	      <p>View or Update<br>
+	         Saved Lessons
 	      </p>
 	      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
 	    </li>
 	    <li class="collection-header">
 	  		<h5>Questions</h5>
 	  	</li>
-	  	<li class="collection-item avatar">
-	      <i class="material-icons circle">folder</i>
-	      <span class="title">Create Question</span>
+	  	<li class="option collection-item avatar">
+	      <i class="purple material-icons circle">library_add</i>
+	      <span class="purple-text title">Create Question</span>
 	      <p>by Standard</p>
 	      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
 	    </li>
-	    <li class="collection-item avatar">
-	      <i class="material-icons circle">folder</i>
-	      <span class="title">Create Collection</span>
+	    <li class="option collection-item avatar">
+	      <i class="orange material-icons circle">library_books</i>
+	      <span class="orange-text title">Create Collection</span>
 	      <p>of Questions</p>
+	      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+	    </li>
+	    <li class="option collection-item avatar">
+	      <i class="cyan material-icons circle">view_module</i>
+	      <span class="cyan-text title">Browse Questions</span>
+	      <p>by Standard<br>
+	      or by Grade Level</p>
+	      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+	    </li>
+	    <li class="option collection-item avatar">
+	      <i class="pink material-icons circle">group_work</i>
+	      <span class="pink-text title">Browse Collections</span>
+	      <p>by Grade Level</p>
 	      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
 	    </li>
 	  </ul>
 
 
-		<footer class="#2e7d32 green darken-3 page-footer hide-on-med-and-down">
+		<footer ng-if="!user" class="grey lighten-3 page-footer hide-on-med-and-down">
 		  <div class="container">
 		    <div class="row">
 		      <div class="col l6 s12">
-		        <h5 class="white-text">Teacher Creature</h5>
-		        <p class="grey-text text-lighten-4">An education management solution.</p>
+		        <h5 class="black-text">Teacher Creature</h5>
+		        <p class="black-text text-lighten-4">An education management solution.</p>
 		      </div>
 		      <div class="col l4 offset-l2 s12">
-		        <h5 class="white-text">Explore</h5>
+		        <h5 class="black-text">Explore</h5>
 		        <ul>
-		          <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-		          <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
-		          <li><a class="grey-text text-lighten-3" href="#!">Terms of Use</a></li>
-		          <li><a class="grey-text text-lighten-3" href="#!">Help Center</a></li>
+		          <li><a class="black-text text-lighten-3" href="#!">About</a></li>
+		          <li><a class="black-text text-lighten-3" href="#!">Contact</a></li>
+		          <li><a class="black-text text-lighten-3" href="#!">Terms of Use</a></li>
+		          <li><a class="black-text text-lighten-3" href="#!">Help Center</a></li>
 		        </ul>
 		      </div>
 		    </div>
 		  </div>
-		  <div class="footer-copyright">
-		    <div class="container">
+		  <div class="#2e7d32 green darken-3 footer-copyright">
+		    <div class="black-text container">
 		    © 2016 Teacher Creature Inc.
-		    <a class="grey-text text-lighten-4 right" href="#!">Careers</a>
+		    <a class="black-text text-lighten-4 right" href="#!">Careers</a>
 		    </div>
 		  </div>
 		</footer> 
