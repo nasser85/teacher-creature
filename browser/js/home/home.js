@@ -11,7 +11,7 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('HomeCtrl', function($scope, user, AuthService, $state) {
+app.controller('HomeCtrl', function($scope, user, AuthService, $state, $rootScope) {
 	window.scroll(0,0);
 	document.body.style.backgroundImage = ""
 

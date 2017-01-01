@@ -11,20 +11,13 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('CreateClassCtrl', function($scope, user, AuthService, $state) {
+app.controller('CreateClassCtrl', function($scope, user, $state, $rootScope) {
 	window.scroll(0,0);
 	document.body.style.backgroundImage = ""
 
 	$scope.user = user;
-
-	$scope.logout = function() {
-		AuthService.logout()
-			.then(function() {
-				console.log('hello')
-				$state.go('login', {user: "Teacher"});
-			})
-			.catch(function () {
-                $scope.error = 'Invalid login credentials.';
-            });
-	}
+    $rootScope.title = {
+        name: "Create Class",
+        icon: "assignment_ind"
+    };
 })

@@ -2,7 +2,7 @@
   box-sizing: flex-box;
 }
 body {
-  background-color: #2e7d32 !important;
+  background-color: white !important;
   background: no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -79,6 +79,18 @@ video {
 	    
 	}
 }
+
+.option {
+	background-color: white;
+}
+.option:hover {
+	background-color: #D3D3D3;
+}
+
+.dashboard-title {
+	margin-top: 0px !important;
+}
+
 .main-button:hover {
 	background-color: black;
 }
