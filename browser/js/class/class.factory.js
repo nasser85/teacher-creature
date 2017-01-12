@@ -1,4 +1,4 @@
-app.factory('ClassFactory', function($http) {
+app.factory('ClassFactory', function($http, $state) {
 	var classFactory = {};
 	var baseUrl = "/api/classes/";
 
@@ -6,6 +6,9 @@ app.factory('ClassFactory', function($http) {
 		return $http.post(baseUrl, newClass)
 			.then(function(createdClass) {
 				return createdClass.data;
+			})
+			.then(function(created) {
+				$state.go('singleClass', {classId: created.id})
 			})
 	}
 
