@@ -8,7 +8,7 @@ module.exports = db.define('test', {
         type: Sequelize.STRING
     },
     subject: {
-        type: Sequelize.ENUM('English', 'Math')
+        type: Sequelize.ENUM('English', 'Math', 'Science')
     },
     tags: {
         type: Sequelize.STRING
