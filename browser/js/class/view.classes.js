@@ -18,6 +18,7 @@ app.controller('ViewClassesCtrl', function($scope, user, $state, $rootScope) {
 	$scope.user = user;
     $rootScope.title = {
         name: "View Classes",
-        icon: "supervisor_account"
+        icon: "supervisor_account",
+        color: "orange-text"
     };
 })
