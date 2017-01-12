@@ -1,11 +1,24 @@
 <div id="single-class">
-	<nav>
-	    <div class="nav-wrapper">
-	      <div class="col s12">
-	        <a href="#!" class="breadcrumb">Dashboard</a>
-	        <a href="#!" class="breadcrumb">View Classes</a>
-	        <a href="#!" class="breadcrumb">Third</a>
-	      </div>
-	    </div>
-	 </nav>
+	<title-banner></title-banner>
+	<div class="row">
+		<table class="centered bordered striped">
+	        <thead>
+	          <tr>
+	              <th data-field="id">Subject</th>
+	              <th data-field="name">Description</th>
+	          </tr>
+	        </thead>
+
+	        <tbody>
+	          <tr class="green-text">
+	            <td>{{currentClass.subject}}</td>
+	            <td>{{currentClass.description}}</td>
+	          </tr>
+	        </tbody>
+	    </table>
+		<div href="#" ng-repeat="button in buttons" class="choices center col s6 m3 l2">
+			<i class="center-align medium material-icons">{{button.icon}}</i>
+			<h6 class="center">{{button.label}}</h6>
+		</div>
+	</div>
 </div>

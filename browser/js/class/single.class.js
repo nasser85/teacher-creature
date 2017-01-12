@@ -14,8 +14,39 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('SingleClassCtrl', function($scope, currentClass, ClassFactory) {
+app.controller('SingleClassCtrl', function($scope, user, currentClass, $rootScope) {
 	window.scroll(0,0);
 	document.body.style.backgroundImage = ""
-
+    $scope.currentClass = currentClass;
+    $scope.buttons = [
+        {
+            label: "Students",
+            icon: "supervisor_account"
+        },
+        {
+            label: "Assignments",
+            icon: "note_add"
+        },
+        {
+            label: "Exams",
+            icon: "spellcheck"
+        },
+        {
+            label: "Resources",
+            icon: "https"
+        },
+        {
+            label: "All Classes",
+            icon: "recent_actors"
+        },
+        {
+            label: "Mailbox",
+            icon: "markunread_mailbox"
+        }
+    ];
+    $rootScope.title = {
+        name: currentClass.name,
+        icon: "stars",
+        color: "green-text"
+    };
 })

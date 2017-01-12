@@ -57,6 +57,9 @@ app.controller('CreateClassCtrl', function($scope, user, $state, $rootScope, Cla
         }
    
     }
+    $scope.back = function() {
+        $scope.section = "name";
+    }
     $scope.createClass = function() {
         $scope.classroom.userId = $scope.user.id;
         ClassFactory.create($scope.classroom);
