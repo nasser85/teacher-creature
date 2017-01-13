@@ -19,10 +19,19 @@ app.factory('ClassFactory', function($http, $state) {
 			})
 	}
 
-	classFactory.fetchById = function(id) {
-		return $http.get(baseUrl + id)
-			.then(function(foundClass) {
-				return foundClass.data
+	classFactory.fetchByUser = function(user) {
+		return $http.post(baseUrl + 'all', user)
+			.then(function(userClasses) {
+				return userClasses.data;
+			})
+	}
+
+	classFactory.fetchById = function(id, user) {
+		return $http.post(baseUrl + 'all', user)
+			.then(function(userClasses) {
+				return userClasses.data.filter(function(el) {
+					return el.id == id;
+				})[0];
 			})
 	}
 

@@ -20,24 +20,6 @@ app.controller('CreateClassCtrl', function($scope, user, $state, $rootScope, Cla
     $scope.section = "name";
     $scope.classroom = {};
 
-    function makeGrades() {
-        var arr = [];
-        for (var i = 0; i < 13; i++) {
-            if (i == 0) {
-                arr.push("Kindergarten");
-            } else if (i == 1) {
-                arr.push("1st Grade");
-            } else if (i == 2) {
-                arr.push("2nd Grade");
-            } else if (i == 3) {
-                arr.push("3rd Grade");
-            } else {
-                arr.push(i.toString() + "th Grade");
-            }
-        }
-        return arr;
-    }
-    $scope.grades = makeGrades();
     $(document).ready(function() {
         $('select').material_select();
     });
@@ -62,6 +44,7 @@ app.controller('CreateClassCtrl', function($scope, user, $state, $rootScope, Cla
     }
     $scope.createClass = function() {
         $scope.classroom.userId = $scope.user.id;
+        $state.go('loader');
         ClassFactory.create($scope.classroom);
     }
 
