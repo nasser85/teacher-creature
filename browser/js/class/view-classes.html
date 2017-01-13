@@ -1,1 +1,19 @@
-<title-banner></title-banner>
+<div id="view-classes">
+	<title-banner></title-banner>
+	<div class="row">
+        <div ng-repeat="one in classes" class="col s6 m4 l3">
+          <div ui-sref="singleClass({classId : one.id})" class="card small">
+            <div class="card-image">
+              <img src="classpic.jpg">
+              <span class="card-title">{{one.subject}}</span>
+            </div>
+            <div class="card-content">
+              <p>{{one.description}}</p>
+            </div>
+            <div class="card-action">
+              <a href="#">{{one.name}}</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

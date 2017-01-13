@@ -6,16 +6,20 @@ app.config(function ($stateProvider) {
         resolve: {
         	user: function(AuthService) {
         		return AuthService.getLoggedInUser();
-        	}
+        	},
+            classes: function(ClassFactory, user) {
+                return ClassFactory.fetchByUser(user);
+            }
         }
     });
 });
 
-app.controller('ViewClassesCtrl', function($scope, user, $state, $rootScope) {
+app.controller('ViewClassesCtrl', function($scope, user, classes, $state, $rootScope) {
 	window.scroll(0,0);
 	document.body.style.backgroundImage = ""
 
 	$scope.user = user;
+    $scope.classes = classes;
     $rootScope.title = {
         name: "View Classes",
         icon: "supervisor_account",

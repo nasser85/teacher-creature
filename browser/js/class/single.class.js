@@ -7,46 +7,28 @@ app.config(function ($stateProvider) {
         	user: function(AuthService) {
         		return AuthService.getLoggedInUser();
         	},
-        	currentClass: function(ClassFactory, $stateParams) {
-        		return ClassFactory.fetchById($stateParams.classId);
+        	currentClass: function(ClassFactory, user, $stateParams) {
+        		return ClassFactory.fetchById($stateParams.classId, user);
         	}
         }
     });
 });
 
-app.controller('SingleClassCtrl', function($scope, user, currentClass, $rootScope) {
+app.controller('SingleClassCtrl', function($scope, user, currentClass, $rootScope, $state, InterfaceFactory) {
 	window.scroll(0,0);
-	document.body.style.backgroundImage = ""
+	document.body.style.backgroundImage = "";
+    if (!currentClass) {
+        $state.go('home');
+    } else {
+        $rootScope.title = {
+            name: currentClass.name,
+            icon: "stars",
+            color: "green-text"
+        };
+    }
+
     $scope.currentClass = currentClass;
-    $scope.buttons = [
-        {
-            label: "Students",
-            icon: "supervisor_account"
-        },
-        {
-            label: "Assignments",
-            icon: "note_add"
-        },
-        {
-            label: "Exams",
-            icon: "spellcheck"
-        },
-        {
-            label: "Resources",
-            icon: "https"
-        },
-        {
-            label: "All Classes",
-            icon: "recent_actors"
-        },
-        {
-            label: "Mailbox",
-            icon: "markunread_mailbox"
-        }
-    ];
-    $rootScope.title = {
-        name: currentClass.name,
-        icon: "stars",
-        color: "green-text"
-    };
+    $scope.buttons = InterfaceFactory.classButtons();
+
+    
 })

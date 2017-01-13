@@ -21,10 +21,23 @@ router.post('/', function(req, res, next) {
 		.catch(next);
 })
 
-router.get('/:id', function(req, res, next) {
+router.post('/all', function(req, res, next) {
+	Class.findAll({
+		where: {
+			userId: req.body.id
+		}
+	})
+	.then(function(userClasses) {
+		res.send(userClasses)
+	})
+	.catch(next)
+})
+
+router.post('/view', function(req, res, next) {
 	Class.findOne({
 			where: {
-				id: req.params.id
+				id: req.body.id,
+				userId: req.body.userId
 			}
 		})
 		.then(function(foundClass) {
@@ -32,6 +45,8 @@ router.get('/:id', function(req, res, next) {
 		})
 		.catch(next);
 });
+
+
 
 router.use(function (req, res) {
     res.status(404).end();
