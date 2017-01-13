@@ -11,9 +11,8 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('HomeCtrl', function($scope, user, AuthService, $state, $rootScope) {
-	window.scroll(0,0);
-	document.body.style.backgroundImage = ""
+app.controller('HomeCtrl', function($scope, user, AuthService, $state, $rootScope, UtilsFactory) {
+	UtilsFactory.init(user);
 
 	$scope.user = user;
 
