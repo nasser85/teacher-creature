@@ -1,8 +1,8 @@
 app.config(function ($stateProvider) {
-    $stateProvider.state('viewClasses', {
-        url: '/view-classes',
-        templateUrl: 'js/class/view-classes.html',
-        controller: 'ViewClassesCtrl',
+    $stateProvider.state('students', {
+        url: '/:classId/students',
+        templateUrl: 'js/student/students.html',
+        controller: 'StudentsCtrl',
         resolve: {
         	user: function(AuthService) {
         		return AuthService.getLoggedInUser();
@@ -14,7 +14,7 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('ViewClassesCtrl', function($scope, user, classes, $state, $rootScope, UtilsFactory) {
+app.controller('StudentsCtrl', function($scope, user, classes, $state, $rootScope, UtilsFactory) {
 	UtilsFactory.init(user);
 
 	$scope.user = user;

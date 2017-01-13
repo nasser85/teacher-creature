@@ -11,9 +11,8 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('CreateLessonCtrl', function($scope, user, $state, $rootScope) {
-	window.scroll(0,0);
-	document.body.style.backgroundImage = ""
+app.controller('CreateLessonCtrl', function($scope, user, $state, $rootScope, UtilsFactory) {
+	UtilsFactory.init(user);
 
 	$scope.user = user;
     $rootScope.title = {

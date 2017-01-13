@@ -14,9 +14,8 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('SingleClassCtrl', function($scope, user, currentClass, $rootScope, $state, InterfaceFactory) {
-	window.scroll(0,0);
-	document.body.style.backgroundImage = "";
+app.controller('SingleClassCtrl', function($scope, user, currentClass, $rootScope, $state, InterfaceFactory, UtilsFactory) {
+    UtilsFactory.init(user);
     if (!currentClass) {
         $state.go('home');
     } else {

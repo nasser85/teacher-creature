@@ -11,9 +11,8 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('CreateClassCtrl', function($scope, user, $state, $rootScope, ClassFactory) {
-	window.scroll(0,0);
-	document.body.style.backgroundImage = ""
+app.controller('CreateClassCtrl', function($scope, user, $state, $rootScope, ClassFactory, UtilsFactory) {
+	UtilsFactory.init(user);
     document.getElementById('class_name').focus();
 
     $scope.user = user;
