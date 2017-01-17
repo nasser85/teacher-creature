@@ -4,6 +4,7 @@ module.exports = router;
 var _ = require('lodash');
 const db = require('../../../db');
 const Class = db.model('classroom');
+const Student = db.model('student');
 
 router.get('/', function(req, res, next) {
 	Class.findAll({})
@@ -25,7 +26,9 @@ router.post('/all', function(req, res, next) {
 	Class.findAll({
 		where: {
 			userId: req.body.id
-		}
+		},
+		include: [Student]
+		
 	})
 	.then(function(userClasses) {
 		res.send(userClasses)

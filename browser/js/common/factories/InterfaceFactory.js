@@ -5,27 +5,33 @@ app.factory('InterfaceFactory', function() {
 		return [
 			        {
 			            label: "Students",
-			            icon: "supervisor_account"
+			            icon: "supervisor_account",
+			            link: "students({classId: currentClass.id})"
 			        },
 			        {
 			            label: "Assignments",
-			            icon: "note_add"
+			            icon: "note_add",
+			            link: "students({classId: currentClass.id})"
 			        },
 			        {
 			            label: "Exams",
-			            icon: "spellcheck"
+			            icon: "spellcheck",
+			            link: "students({classId: currentClass.id})"
 			        },
 			        {
 			            label: "Resources",
-			            icon: "https"
+			            icon: "https",
+			            link: "students({classId: currentClass.id})"
 			        },
 			        {
 			            label: "All Classes",
-			            icon: "recent_actors"
+			            icon: "recent_actors",
+			            link: "students({classId: currentClass.id})"
 			        },
 			        {
 			            label: "Mailbox",
-			            icon: "markunread_mailbox"
+			            icon: "markunread_mailbox",
+			            link: "students({classId: currentClass.id})"
 			        }
 			    ];
 	}

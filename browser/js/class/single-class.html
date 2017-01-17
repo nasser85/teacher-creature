@@ -16,7 +16,7 @@
 	          </tr>
 	        </tbody>
 	    </table>
-		<div href="#" ng-repeat="button in buttons" class="choices center col s6 m3 l2">
+		<div href="#" ng-repeat="button in buttons" class="choices center col s6 m3 l2" ui-sref="{{button.link}}">
 			<i class="center-align medium material-icons">{{button.icon}}</i>
 			<h6 class="center">{{button.label}}</h6>
 		</div>
