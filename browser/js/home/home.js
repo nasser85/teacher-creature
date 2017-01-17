@@ -15,7 +15,7 @@ app.controller('HomeCtrl', function($scope, user, AuthService, $state, $rootScop
 	UtilsFactory.init(user);
 
 	$scope.user = user;
-
+    console.log($scope.user)
 	$scope.logout = function() {
 		AuthService.logout()
 			.then(function() {

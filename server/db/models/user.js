@@ -4,6 +4,7 @@ const _ = require('lodash');
 const Sequelize = require('sequelize');
 
 const db = require('../_db');
+const Classroom = require('./classroom');
 
 module.exports = db.define('user', {
     email: {
@@ -32,6 +33,9 @@ module.exports = db.define('user', {
         type: Sequelize.TEXT
     }
 }, {
+    defaultScope: {
+        include: [Classroom]
+    },
     instanceMethods: {
         sanitize: function () {
             return _.omit(this.toJSON(), ['password', 'salt']);

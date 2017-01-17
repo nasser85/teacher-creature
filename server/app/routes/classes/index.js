@@ -15,7 +15,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-	Class.create(req.body)
+	Class.create(req.body, {
+		defaultScope: [Student]
+	})
 		.then(function(newClass) {
 			res.send(newClass);
 		})
