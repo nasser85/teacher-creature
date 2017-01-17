@@ -12,5 +12,9 @@ module.exports = db.define('student', {
     },
     lastName: {
         type: Sequelize.STRING
+    },
+    picture: {
+    	type: Sequelize.ENUM('boy.png', 'girl.png'),
+    	defaultValue: 'boy.png'
     }
 });

@@ -26,8 +26,9 @@ module.exports = db.define('user', {
     school: {
         type: Sequelize.STRING
     },
-    pictureUrl: {
-        type: Sequelize.STRING
+    picture: {
+        type: Sequelize.STRING,
+        defaultValue: 'teacher.png'
     },
     bio: {
         type: Sequelize.TEXT
