@@ -62,7 +62,7 @@ nav {
 }
 
 #greeting {
-	margin-top: 10px;
+	margin-top: 100px;
 	z-index: 99;
 	position: absolute;
 	font-family: generalFont;
@@ -74,10 +74,15 @@ nav {
 	    1px 1px 0 #000; 
 	}
 }
-video {
-	margin-top: -220px;
+#intro-video {
+	overflow: hidden;
+	margin-top: -80px !important;
 	z-index: 1;
-	min-height: 800px !important;
+	height: 600px !important;
+	video {
+		height: 900px;
+	}
+	
 }
 
 #teacher-logo {

@@ -1,8 +1,10 @@
 <section id="home">
 	<greeting ng-if="!user"></greeting>
-	 <video ng-if="!user" loop autoplay no-controls class="responsive-video hide-on-small-only" controls>
-	    <source src="school.mp4" type="video/mp4">
-	  </video>
+	<div ng-if="!user" id="intro-video">
+		 <video loop autoplay no-controls class="hide-on-small-only" controls>
+		    <source src="school.mp4" type="video/mp4">
+		  </video>
+	</div>
 	  <ul ng-if="user" class="collection with-header">
 	  	<li class="collection-header">
 
@@ -81,31 +83,5 @@
 	      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
 	    </li>
 	  </ul>
-
-
-		<footer ng-if="!user" class="grey lighten-3 page-footer hide-on-med-and-down">
-		  <div class="container">
-		    <div class="row">
-		      <div class="col l6 s12">
-		        <h5 class="black-text">Teacher Creature</h5>
-		        <p class="black-text text-lighten-4">An education management solution.</p>
-		      </div>
-		      <div class="col l4 offset-l2 s12">
-		        <h5 class="black-text">Explore</h5>
-		        <ul>
-		          <li><a class="black-text text-lighten-3" href="#!">About</a></li>
-		          <li><a class="black-text text-lighten-3" href="#!">Contact</a></li>
-		          <li><a class="black-text text-lighten-3" href="#!">Terms of Use</a></li>
-		          <li><a class="black-text text-lighten-3" href="#!">Help Center</a></li>
-		        </ul>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="#2e7d32 green darken-3 footer-copyright">
-		    <div class="black-text container">
-		    © 2016 Teacher Creature Inc.
-		    <a class="black-text text-lighten-4 right" href="#!">Careers</a>
-		    </div>
-		  </div>
-		</footer> 
+	<front-page ng-if="!user"></front-page>
 </section>
