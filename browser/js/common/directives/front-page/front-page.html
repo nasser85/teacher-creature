@@ -1,12 +1,11 @@
-<div id="front-page" style="margin-top:-20px;background-color:black; color:white;"class="row">
-	<div style="padding:40px;"class="center-align col l3 m4 s12">
-		<i class="large material-icons">vpn_key</i>
-		<h5>Student Success</h5>
-		<p>Streamline the process of analyzing classroom data</p>
+<div id="front-page" style="margin-top:-20px;background-color:black; color:white;">
+	<div class="row">
+		<div ng-repeat="oneFeature in features" class="center-align col l4 m6 s12">
+			<div id="feature">
+				<i class="large material-icons">{{oneFeature.icon}}</i>
+				<h5>{{oneFeature.label}}</h5>
+				<p>{{oneFeature.text}}</p>
+			</div>
+		</div>
 	</div>
-	<div class="col l3 m4 s12">
-	</div>
-	<div class="col l3 m4 s12">
-	</div>
-	
 </div>

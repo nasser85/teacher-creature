@@ -2,7 +2,6 @@
   box-sizing: flex-box;
 }
 body {
-  background-color: green;
   background: no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -74,13 +73,16 @@ nav {
 	    1px 1px 0 #000; 
 	}
 }
+#feature {
+	padding: 40px;
+}
 #intro-video {
 	overflow: hidden;
 	margin-top: -80px !important;
 	z-index: 1;
 	height: 600px !important;
 	video {
-		height: 900px;
+		height: 800px;
 	}
 	
 }
