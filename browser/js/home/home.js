@@ -11,15 +11,11 @@ app.config(function ($stateProvider) {
     });
 });
 
-app.controller('HomeCtrl', function($scope, user, AuthService, $state, $rootScope, UtilsFactory) {
+app.controller('HomeCtrl', function($scope, user, AuthService, $state, $rootScope, UtilsFactory, InterfaceFactory) {
 	UtilsFactory.init(user);
 
 	$scope.user = user;
-    $scope.features = [
-        {
-            
-        }
-    ];
+    $scope.features = InterfaceFactory.siteFeatures();
 
 	$scope.logout = function() {
 		AuthService.logout()

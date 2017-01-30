@@ -7,7 +7,7 @@ app.factory('UtilsFactory', function() {
 		if (user) {
 			document.body.style.backgroundColor = 'white';
 		} else {
-			document.body.style.backgroundColor = 'green';
+			document.body.style.backgroundColor = 'black';
 		}
 		
 	}
