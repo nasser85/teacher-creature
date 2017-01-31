@@ -1,7 +1,11 @@
 # Teacher Creature (or something else...)
 ## Screenshots
-
-
+<p align="center">
+  <h3><em>Title Screen</em></h3>
+  <img src="https://nasser85.github.io/personal-site/teacher1.png" width="50%"/>
+  <h3><em>Example Game Play</em></h3>
+  <img src="https://nasser85.github.io/personal-site/teacher2.png" width="50%"/>
+</p>
 ## Live Site
 none, yet...
 
