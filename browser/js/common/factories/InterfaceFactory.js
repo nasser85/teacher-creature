@@ -45,17 +45,17 @@ app.factory('InterfaceFactory', function() {
 			        },
 			        {
 			            label: "Design Lessons",
-			            icon: "note_add",
+			            icon: "library_books",
 			            text: "Streamline the process for designing engaging and interactive lessons."
 			        },
 			        {
 			            label: "Get Analytics",
-			            icon: "recent_actors",
+			            icon: "equalizer",
 			            text: "Recieve real time data on student acheivement across different measures."
 			        },
 			        {
 			            label: "Browse Resources",
-			            icon: "https",
+			            icon: "view_carousel",
 			            text: "Search through dozens or resources from teachers across the globe"
 			        },
 			        {
@@ -65,7 +65,7 @@ app.factory('InterfaceFactory', function() {
 			        },
 			        {
 			            label: "Contribute",
-			            icon: "markunread_mailbox",
+			            icon: "loyalty",
 			            text: "Create and share test questions, study guides, and more."
 			        }
 				];
