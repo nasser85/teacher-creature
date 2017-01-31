@@ -1,15 +1,23 @@
 <div id="front-page" style="color:white;">
-	<div id="devices" class="row">
-		<h4 class="center col m12 l6"><em>Enter the classroom from any device any where</em></h4>
-		<img  class="col m12 l6" src="devices.png">
-	</div>
-	<div class="row">
+	<div id="features" class="row">
 		<div ng-repeat="oneFeature in features" class="center-align col l4 m6 s12">
 			<div id="feature">
 				<i class="large material-icons">{{oneFeature.icon}}</i>
-				<h5>{{oneFeature.label}}</h5>
+				<h4>{{oneFeature.label}}</h4>
 				<p>{{oneFeature.text}}</p>
 			</div>
 		</div>
 	</div>
+	<div id="devices" class="row">
+		<h2 class="center col m12 l8 offset-l2"><em>Enter the classroom from any device any where</em></h2>
+		<img  class="center-align col m12 l8 offset-l2" src="devices.png">
+	</div>
+	 <footer class="green darken-3 page-footer">
+		<div class="footer-copyright">
+		    <div class="container">
+		    © 2014 Teacher Creature
+		    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+		    </div>
+		</div>
+	</footer>
 </div>

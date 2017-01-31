@@ -136,15 +136,41 @@ nav {
 	img {
 		margin-top: 20px;
 	}
-	h4 {
-		padding: 40px;
-		margin-top: 80px;
+	h2 {
+		font-family: generalFont;
+		padding: 20px;
+		margin-top: 40px;
 	}
 }
 
 #devices {
+	color: white;
+	img {
+		max-width: 100%;
+	}
+}
+#features {
 	background-color: white;
-	color: black;
+
+	
+
+	  i {
+	  	color: lightgreen;
+		text-shadow:
+	    -1px -1px 0 #000,
+	    1px -1px 0 #000,
+	    -1px 1px 0 #000,
+	    1px 1px 0 #000; 
+	}
+	h4 {
+		color: green;
+		font-family: titleFont;
+	}
+	p {
+		color: green;
+		font-family: generalFont;
+		font-size: 22px;
+	}
 }
 
 .main-button:hover {

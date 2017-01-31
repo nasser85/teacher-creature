@@ -54,14 +54,14 @@ app.factory('InterfaceFactory', function() {
 			            text: "Recieve real time data on student acheivement across different measures."
 			        },
 			        {
-			            label: "Construct Exams",
-			            icon: "spellcheck",
-			            text: "Build common core aligned tests and quizzes."
-			        },
-			        {
 			            label: "Browse Resources",
 			            icon: "https",
 			            text: "Search through dozens or resources from teachers across the globe"
+			        },
+			        {
+			            label: "Construct Exams",
+			            icon: "spellcheck",
+			            text: "Build common core aligned tests and quizzes."
 			        },
 			        {
 			            label: "Contribute",
