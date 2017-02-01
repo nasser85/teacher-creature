@@ -16,6 +16,12 @@ app.config(function ($stateProvider) {
 
 app.controller('StudentsCtrl', function($scope, user, currentClass, $state, $rootScope, UtilsFactory, StudentFactory) {
 	UtilsFactory.init(user);
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('select').material_select();
+        }, 1000);
+        
+    });
     
     if (!currentClass) {
         $state.go('home');
