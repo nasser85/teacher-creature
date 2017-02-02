@@ -13,8 +13,11 @@ module.exports = db.define('student', {
     lastName: {
         type: Sequelize.STRING
     },
-    picture: {
-    	type: Sequelize.ENUM('boy.png', 'girl.png'),
-    	defaultValue: 'boy.png'
+    isFemale: {
+    	type: Sequelize.BOOLEAN,
+        defaultValue: false
+    },
+    race: {
+        type: Sequelize.ENUM('Black or African American', 'American Indian or Alaskan Native', 'Asian', 'Hispanic or Latino', 'White', 'Two or More Races', 'Other')
     }
 });
