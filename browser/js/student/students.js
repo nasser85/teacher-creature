@@ -23,6 +23,7 @@ app.controller('StudentsCtrl', function($scope, user, currentClass, $state, $roo
         
     });
     $scope.student = {};
+    $scope.updateClass = false;
     
     if (!currentClass) {
         $state.go('home');
@@ -35,7 +36,12 @@ app.controller('StudentsCtrl', function($scope, user, currentClass, $state, $roo
     }
 
     $scope.add = function() {
-        console.log($scope.student);
+        var obj = $scope.student;
+        $scope.students.push(obj);
+        $scope.student = {};
+    }
+    $scope.update = function() {
+        $scope.updateClass = true;
     }
     $scope.currentClass = currentClass;
 	$scope.user = user;
