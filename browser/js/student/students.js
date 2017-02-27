@@ -40,6 +40,11 @@ app.controller('StudentsCtrl', function($scope, user, currentClass, $state, $roo
         $scope.students.push(obj);
         $scope.student = {};
     }
+
+    $scope.removeStudent = function(index) {
+        $scope.students.splice(index, 1);
+    }
+
     $scope.update = function() {
         $scope.updateClass = true;
     }
