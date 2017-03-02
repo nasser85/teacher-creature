@@ -37,6 +37,7 @@ app.controller('StudentsCtrl', function($scope, user, currentClass, $state, $roo
 
     $scope.add = function() {
         var obj = $scope.student;
+        $scope.student.classroomId = currentClass.id;
         $scope.students.push(obj);
         $scope.student = {};
     }
@@ -47,6 +48,11 @@ app.controller('StudentsCtrl', function($scope, user, currentClass, $state, $roo
 
     $scope.update = function() {
         $scope.updateClass = true;
+    }
+    $scope.save = function() {
+        $scope.students.forEach(function(el) {
+            StudentFactory.create(el);
+        })
     }
     $scope.currentClass = currentClass;
 	$scope.user = user;

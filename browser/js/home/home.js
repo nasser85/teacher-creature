@@ -6,17 +6,28 @@ app.config(function ($stateProvider) {
         resolve: {
         	user: function(AuthService) {
         		return AuthService.getLoggedInUser();
-        	}
+        	},
+            standards: function(StandardsFactory) {
+                return StandardsFactory.fetchAll();
+            },
+            juris: function(StandardsFactory) {
+                return StandardsFactory.getJurisdictions();
+            },
+            commonCore: function(StandardsFactory) {
+                return StandardsFactory.getOneJurisdiction();
+            }
         }
     });
 });
 
-app.controller('HomeCtrl', function($scope, user, AuthService, $state, $rootScope, UtilsFactory, InterfaceFactory) {
+app.controller('HomeCtrl', function($scope, user, AuthService, $state, $rootScope, UtilsFactory, InterfaceFactory, standards, juris, commonCore) {
 	UtilsFactory.init(user);
 
 	$scope.user = user;
     $scope.features = InterfaceFactory.siteFeatures();
-
+    console.log(standards);
+    console.log(juris);
+    console.log(commonCore);
 	$scope.logout = function() {
 		AuthService.logout()
 			.then(function() {
