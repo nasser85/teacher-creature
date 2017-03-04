@@ -41,7 +41,7 @@ app.factory('StandardsFactory', function($http, $state) {
 				for (var key in standards.data.data.standards) {
 					arr.push(standards.data.data.standards[key])
 				};
-				return arr;
+				return arr.reverse();
 			});
 	}
 

@@ -5,8 +5,8 @@
             <div class="card-content">
               <span class="card-title center">{{subject}} Standards</span>
               <h5 class="center">{{grade}}</h5>
-              <p ng-repeat="standard in standards" ng-class="{center : !standard.statementNotation}">
-              	<a href="#">{{standard.statementNotation}}</a><span> {{standard.description}}</span>
+              <p ng-repeat="standard in standards" ng-class="{center : !standard.statementNotation, 'depth-one' : standard.depth==0 && !standard.statementNotation, 'depth-two' : standard.depth==1 && !standard.statementNotation, 'red-text' : standard.depth==2 && !standard.statementNotation}">
+              	<a href="#">{{standard.statementNotation}}</a> {{standard.description}}
               </p>
             </div>
           </div>
