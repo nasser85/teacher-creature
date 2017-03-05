@@ -24,5 +24,17 @@ app.factory('StudentFactory', function($http, $state) {
 			})	
 	}
 
+	studentFactory.studentsToAdd = function(newStudents, oldStudents) {
+		return newStudents.filter(function(el) {
+			oldStudents.indexOf(el) == -1;
+		});
+	}
+
+	studentFactory.studentsToDelete = function(newStudents, oldStudents) {
+		return oldStudents.filter(function(el) {
+			newStudents.indexOf(el) == -1;
+		});
+	}
+
 	return studentFactory;
 })
