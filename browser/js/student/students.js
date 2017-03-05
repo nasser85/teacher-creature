@@ -50,9 +50,7 @@ app.controller('StudentsCtrl', function($scope, user, currentClass, $state, $roo
         $scope.updateClass = true;
     }
     $scope.save = function() {
-        $scope.students.forEach(function(el) {
-            StudentFactory.create(el);
-        })
+        StudentFactory.create($scope.students);
     }
     $scope.currentClass = currentClass;
 	$scope.user = user;

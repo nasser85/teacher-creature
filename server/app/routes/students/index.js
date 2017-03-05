@@ -6,9 +6,16 @@ const db = require('../../../db');
 const Student = db.model('student');
 
 router.post('/', function(req, res, next) {
-	Student.create(req.body)
-		.then(function(newStudent) {
-			res.send(newStudent);
+	Student.bulkCreate(req.body)
+		.then(function() {
+			return Student.findAll({
+				where: {
+					userId: req.body[0].userId
+				}
+			})
+		})
+		.then(function(students) {
+			res.send(students);
 		})
 		.catch(next);
 })

@@ -2,10 +2,10 @@ app.factory('StudentFactory', function($http, $state) {
 	var studentFactory = {};
 	var baseUrl = "/api/students/";
 
-	studentFactory.create = function(student) {
-		return $http.post(baseUrl, student)
-			.then(function(createdStudent) {
-				return createdStudent.data;
+	studentFactory.create = function(students) {
+		return $http.post(baseUrl, students)
+			.then(function(createdStudents) {
+				return createdStudents.data;
 			})
 		
 	}
