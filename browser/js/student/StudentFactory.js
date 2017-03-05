@@ -30,11 +30,5 @@ app.factory('StudentFactory', function($http, $state) {
 		});
 	}
 
-	studentFactory.studentsToDelete = function(newStudents, oldStudents) {
-		return oldStudents.filter(function(el) {
-			newStudents.indexOf(el) == -1;
-		});
-	}
-
 	return studentFactory;
 })
