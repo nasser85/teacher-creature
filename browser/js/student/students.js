@@ -52,6 +52,10 @@ app.controller('StudentsCtrl', function($scope, user, currentClass, $state, $roo
     $scope.save = function() {
         StudentFactory.create($scope.students);
     }
+
+    $scope.edit = function() {
+        $scope.updateClass = true;
+    }
     $scope.currentClass = currentClass;
 	$scope.user = user;
     $scope.students = $scope.currentClass.students;

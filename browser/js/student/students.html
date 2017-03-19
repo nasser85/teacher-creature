@@ -2,7 +2,11 @@
 	<title-banner></title-banner>
 	
 	<li ng-if="!students.length && !updateClass" class="center collection-item"><div>There are no students in this class, yet.  <a href="#" ng-click="update()" class="red-text">Add some now.</a></div></li>
-	    
+	<div ng-if="students.length && !updateClass" class="row">
+		<div class="col s12 m12 l10 offset-l1">
+			<all-students></all-students>
+		</div> 
+	</div>   
 	<div ng-show="updateClass" class="row">
 		<div class="col s12 m6 l4">
 			<add-student></add-student>

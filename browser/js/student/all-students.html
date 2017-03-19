@@ -1,10 +1,14 @@
 <ul id="all-students" class="collection with-header">
-	<li class="collection-header"><h4 class="center">Class Roster<a href="#!" ng-click="save()"class="secondary-content"><div class="chip">
-    Save</div></a></h4></li>
+	<li class="collection-header">
+		<h4 class="center">Class Roster<a href="#!" class="secondary-content">
+		<div ng-click="edit()" ng-if="!updateClass" class="chip">Edit</div>
+    	<div ng-click="save()" ng-if="updateClass" class="chip">Save</div>
+	</a>
+</h4></li>
 	<li ng-repeat="aStudent in students" class="collection-item avatar">
       <img ng-if="!aStudent.isFemale" src="boy.png" alt="" class="circle">
       <img ng-if="aStudent.isFemale" src="girl.png" alt="" class="circle">
       <span class="title">{{aStudent.lastName}}, {{aStudent.firstName}}</span>
-      <a href="#!" ng-click="removeStudent(students.indexOf(aStudent))"class="secondary-content"><i class="material-icons">close</i></a>
+      <a href="#!" ng-click="removeStudent(students.indexOf(aStudent))"class="secondary-content"><i ng-if="updateClass"class="material-icons">close</i></a>
     </li>
 </ul>
