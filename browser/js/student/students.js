@@ -50,7 +50,11 @@ app.controller('StudentsCtrl', function($scope, user, currentClass, $state, $roo
         $scope.updateClass = true;
     }
     $scope.save = function() {
-        StudentFactory.create(StudentFactory.studentsToAdd($scope.students));
+        var addThese = StudentFactory.studentsToAdd($scope.students);
+        if (addThese.length) {
+            StudentFactory.create(addThese);
+        }
+        
     }
 
     $scope.edit = function() {
