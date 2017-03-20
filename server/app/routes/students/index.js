@@ -10,7 +10,7 @@ router.post('/', function(req, res, next) {
 		.then(function() {
 			return Student.findAll({
 				where: {
-					userId: req.body[0].userId
+					classroomId: req.body[0].classroomId
 				}
 			})
 		})

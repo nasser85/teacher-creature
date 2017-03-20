@@ -24,9 +24,10 @@ app.factory('StudentFactory', function($http, $state) {
 			})	
 	}
 
-	studentFactory.studentsToAdd = function(newStudents, oldStudents) {
+	studentFactory.studentsToAdd = function(newStudents) {
 		return newStudents.filter(function(el) {
-			oldStudents.indexOf(el) == -1;
+			return !el.createdAt;
+			
 		});
 	}
 
