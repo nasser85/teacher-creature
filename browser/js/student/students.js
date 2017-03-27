@@ -24,6 +24,7 @@ app.controller('StudentsCtrl', function($scope, user, currentClass, $state, $roo
     });
     $scope.student = {};
     $scope.updateClass = false;
+    $scope.studentsToDelete = [];
     
     if (!currentClass) {
         $state.go('home');
@@ -43,7 +44,8 @@ app.controller('StudentsCtrl', function($scope, user, currentClass, $state, $roo
     }
 
     $scope.removeStudent = function(index) {
-        $scope.students.splice(index, 1);
+        var deletedStudent = $scope.students.splice(index, 1);
+        $scope.studentsToDelete.push(deletedStudent[0]);
     }
 
     $scope.update = function() {
@@ -51,9 +53,13 @@ app.controller('StudentsCtrl', function($scope, user, currentClass, $state, $roo
     }
     $scope.save = function() {
         var addThese = StudentFactory.studentsToAdd($scope.students);
+        console.log($scope.studentsToDelete[0])
+        $scope.studentsToDelete.forEach(function(el) {StudentFactory.deleteStudent(el)})
         if (addThese.length) {
             StudentFactory.create(addThese);
         }
+        $scope.updateClass = false;
+        $scope.studentsToDelete = [];
         
     }
 

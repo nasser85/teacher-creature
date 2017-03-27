@@ -17,7 +17,7 @@ app.factory('StudentFactory', function($http, $state) {
 			})	
 	}
 
-	studentFactory.delete = function(student) {
+	studentFactory.deleteStudent = function(student) {
 		return $http.delete(baseUrl + student.id)
 			.then(function(deletedStudent) {
 				return deletedStudent.data;
