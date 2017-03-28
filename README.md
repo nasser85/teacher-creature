@@ -11,10 +11,20 @@ none, yet...
 
 ## Getting Started
 1) Fork and clone the repository.  
-2) npm Install  
-3) Bower Install   
-4) npm start  
-5) run localhost:1337 in the browser and that's it!  
+2) 
+```bash
+npm install
+```
+```bash
+bower install
+```
+```bash
+gulp build && build
+```
+```bash
+npm start
+``` 
+3) run localhost:1337 in the browser and that's it!  
 
 ## Contributing
 1) Fork it!  
