@@ -22,7 +22,7 @@ npm install
 bower install
 ```
 ```bash
-gulp build && build
+gulp build && gulp
 ```
 ```bash
 npm start
